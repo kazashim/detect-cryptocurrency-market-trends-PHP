@@ -5,6 +5,9 @@
 |Title: Detect Cryptocurrency Market Trends Using PHP 
 |Date: 29-08-2020
 */
+
+ini_set('trader.real_precision', '8');
+
 $response = json_decode(file_get_contents('https://min-api.cryptocompare.com/data/histoday?fsym=BTC&tsym=USD&limit=60'));
 
 $prices = [];
