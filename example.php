@@ -13,15 +13,20 @@ foreach ($response->Data as $v) {
     $prices[] = $v->close;
 }
 
-$ema8 = trader_ema($prices, 8);
-$ema21 = trader_ema($prices, 21);
 
 ini_set('trader.real_precision', '8');
 
-$corrent_8 = array_pop($ema8);
-$corrent_21 = array_pop($ema21);
+$ema8 = trader_ema($prices, 8);
+$ema21 = trader_ema($prices, 21);
+$current_8 = array_pop($ema8);
+$current_21 = array_pop($ema21);
 $previous_8 = array_pop($ema8);
 $previous_21 = array_pop($ema21);
+
+echo 'Current 8-day: ' . $current_8 . "\n";
+echo 'Current 21-day: ' . $current_21 . "\n";
+echo 'Previous 8-day: ' . $previous_8 . "\n";
+echo 'Previous 21-day: ' . $previous_21 . "\n";
 
 if ($current_8 > $current_21 && $previous_8 < $previous_21) {
     echo 'Buy';
