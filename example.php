@@ -14,8 +14,6 @@ foreach ($response->Data as $v) {
 }
 
 
-ini_set('trader.real_precision', '8');
-
 $ema8 = trader_ema($prices, 8);
 $ema21 = trader_ema($prices, 21);
 $current_8 = array_pop($ema8);
