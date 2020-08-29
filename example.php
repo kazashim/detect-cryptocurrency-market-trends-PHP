@@ -15,3 +15,12 @@ foreach ($response->Data as $v) {
 
 $ema8 = trader_ema($prices, 8);
 $ema21 = trader_ema($prices, 21);
+
+ini_set('trader.real_precision', '8');
+
+$corrent_8 = array_pop($ema8);
+$corrent_21 = array_pop($ema21);
+$previous_8 = array_pop($ema8);
+$previous_21 = array_pop($ema21);
+
+
