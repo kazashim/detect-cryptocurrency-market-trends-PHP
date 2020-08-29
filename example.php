@@ -30,3 +30,5 @@ if ($current_8 > $current_21 && $previous_8 < $previous_21) {
 } else {
     echo 'Do Nothing';
 }
+
+?>
