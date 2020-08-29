@@ -23,4 +23,10 @@ $corrent_21 = array_pop($ema21);
 $previous_8 = array_pop($ema8);
 $previous_21 = array_pop($ema21);
 
-
+if ($current_8 > $current_21 && $previous_8 < $previous_21) {
+    echo 'Buy';
+} elseif ($current_8 < $current_21 && $previous_8 > $previous_21) {
+    echo 'Sell';
+} else {
+    echo 'Do Nothing';
+}
